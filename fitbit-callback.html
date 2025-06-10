@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Fitbit Code erhalten</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2em;
+            background: #f3f3f3;
+        }
+
+        code {
+            background: #eee;
+            padding: 0.5em;
+            display: block;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Autorisierung erfolgreich</h1>
+    <p>Kopiere den folgenden Code und füge ihn in Obsidian ein:</p>
+    <code id="code">Wird geladen…</code>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+        if (code) {
+            document.getElementById("code").textContent = code;
+        } else {
+            document.getElementById("code").textContent = "Kein Code gefunden.";
+        }
+    </script>
+</body>
+
+</html>
